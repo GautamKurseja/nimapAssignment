@@ -1,0 +1,45 @@
+{
+  "user": [
+    {
+      "firstname": "Anish",
+      "lastname": "swami",
+      "email": "Anish@gmail.com",
+      "mobile": 8805753820,
+      "age": 30,
+      "country": "India",
+      "state": "Goa",
+      "companyAddress1": "tcs jaipur",
+      "companyAddress2": "tcs jaipur",
+      "homeAddress2": "456 goa, India",
+      "homeAddress1": "456 goa, India",
+      "hobbies": [
+        "Football",
+        "Hockey",
+        "Tennis"
+      ],
+      "box": "false",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAACZCAMAAAALgmiIAAAAWlBMVEXw8PBUUMv5+fP09PHZ2emWlNk7NsdLRsn8/PNOSsp5dtLl5O3W1uni4ewvKcWMidbs7O8YDMQ/O8eSj9e5uOHp6O7PzuabmtphXs1zcNHEw+M0LsZDP8ioptwKosTiAAABWklEQVR4nO3cW3KCQBBGYW5yURHDhCQkZv/bTBYwv1XdtoRKnfM+PZ+lLzBgURAREe27WvXXu1zPjWgMtDl2qc8vbb7LVIXBPLvUTVvm6w6BMscuyJAhQ4YMGTJkyJAhQ4bsIdl7H9cYKSs/jnGtQ6SsHAJTe/hkW4QMGTJkyJAhQ4YMGTJkyJ4kGzqRvHh0LHHdPUjXU7blbQ5c4rrj0m+yJPBe0DZLkCFDhgwZMmTIkCFDhmxXsou4eJ1TpMy8S1GP0yFfehXPentk9l1+F1Uq+RC656sx7+JpmwcpkCFDhgwZMmTIkCFDhmxXMvnWs6q6d75pnqZh+q1n2WcrLrhv02ge5ni3+k7Nkj+ULtYv6yjPu9W6bhGfsz/qw3/zT9MlO4lhyJAhQ4YMGTJkyJAhQ/ZvZeocWTdL2Xozz3KcVuvSooZ9J/Msz2m1Ts3yDIv9azoiIqLwfgAueFu+phfy2QAAAABJRU5ErkJggg==",
+      "id": "1"
+    },
+    {
+      "firstname": "Anisha",
+      "lastname": "swami",
+      "email": "Anisha@gmail.com",
+      "mobile": 8805753820,
+      "age": 35,
+      "country": "India",
+      "state": "Goa",
+      "companyAddress1": "jp morgan airoli",
+      "companyAddress2": "jp morgan airoli",
+      "homeAddress2": "456 goa, India",
+      "homeAddress1": "456 goa, India",
+      "hobbies": [
+        "Football",
+        "Hockey",
+        "Tennis"
+      ],
+      "box": "false",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAACZCAMAAAALgmiIAAAAWlBMVEXw8PBUUMv5+fP09PHZ2emWlNk7NsdLRsn8/PNOSsp5dtLl5O3W1uni4ewvKcWMidbs7O8YDMQ/O8eSj9e5uOHp6O7PzuabmtphXs1zcNHEw+M0LsZDP8ioptwKosTiAAABWklEQVR4nO3cW3KCQBBGYW5yURHDhCQkZv/bTBYwv1XdtoRKnfM+PZ+lLzBgURAREe27WvXXu1zPjWgMtDl2qc8vbb7LVIXBPLvUTVvm6w6BMscuyJAhQ4YMGTJkyJAhQ4bsIdl7H9cYKSs/jnGtQ6SsHAJTe/hkW4QMGTJkyJAhQ4YMGTJkyJ4kGzqRvHh0LHHdPUjXU7blbQ5c4rrj0m+yJPBe0DZLkCFDhgwZMmTIkCFDhmxXsou4eJ1TpMy8S1GP0yFfehXPentk9l1+F1Uq+RC656sx7+JpmwcpkCFDhgwZMmTIkCFDhmxXMvnWs6q6d75pnqZh+q1n2WcrLrhv02ge5ni3+k7Nkj+ULtYv6yjPu9W6bhGfsz/qw3/zT9MlO4lhyJAhQ4YMGTJkyJAhQ/ZvZeocWTdL2Xozz3KcVuvSooZ9J/Msz2m1Ts3yDIv9azoiIqLwfgAueFu+phfy2QAAAABJRU5ErkJggg==",
+      "id": "2"
+    }]
+  }
