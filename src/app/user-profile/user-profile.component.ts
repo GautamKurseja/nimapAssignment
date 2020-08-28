@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { MAT_DIALOG_DATA, MatChipInputEvent } from "@angular/material";
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from "@angular/platform-browser";
 
 import {
   FormBuilder,
@@ -17,7 +17,7 @@ import {
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
 
 import { Observable, interval } from "rxjs";
-import { mimeType } from '../home-page/mime-type.validator';
+import { mimeType } from "../home-page/mime-type.validator";
 @Component({
   selector: "app-user-profile",
   templateUrl: "./user-profile.component.html",
@@ -33,10 +33,8 @@ export class UserProfileComponent implements OnInit {
     private http: HttpClient,
     private route: ActivatedRoute,
     public dialog: MatDialog,
-    private sanitizer:DomSanitizer
-  ) {
-
-  }
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get("id");
@@ -57,49 +55,33 @@ export class UserProfileComponent implements OnInit {
   getUser(id) {
     return this.http.get(this.mockUrl + id).subscribe((data: any) => {
       this.userData.push(data);
-      console.log("this.user",this.userData);
-     console.log("aaaaa", this.userData[0].image.slice(22))
-     this.base64Image =this.userData[0].image
+      this.base64Image = this.userData[0].image;
     });
   }
 
-  transform(){
+  transform() {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image);
+  }
 }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @Component({
   selector: "user-edit-form",
   templateUrl: "./user-edit-form.html",
   styleUrls: ["./user-profile.component.css"],
-
 })
 export class UserEditForm {
+
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  index: number = 0;
+  numImages: number = 4;
+  imagesLoaded: number = 0;
+  loading: boolean = true;
+
+  selectedFile = null;
+  age: any = 25;
   base64Image2: string;
   constructor(
     private FormBuilder2: FormBuilder,
@@ -108,7 +90,7 @@ export class UserEditForm {
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public dataModule: any,
     private route: ActivatedRoute,
-    private sanitizer:DomSanitizer
+    private sanitizer: DomSanitizer
   ) {
     this.getCountryList();
     this.getStateList();
@@ -123,24 +105,14 @@ export class UserEditForm {
   base64Image: any;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
-
-  selectedFile = null;
   imagePreview: string;
 
   displayedRows$: Observable<any>;
 
-
   ngOnInit() {
-
-   this.base64Image2 = this.userService.getImageBase64();
-   console.log("this.base64Image2", this.base64Image2);
-
-
-
-
-
+    this.base64Image2 = this.userService.getImageBase64();
     this.userForm = this.FormBuilder2.group({
-      firstname: ["",[Validators.required]],
+      firstname: ["", [Validators.required]],
       lastname: ["", Validators.required],
       email: ["", [Validators.required, Validators.email]],
       mobile: ["", [Validators.required]],
@@ -158,37 +130,38 @@ export class UserEditForm {
       box: ["false"],
       image: new FormControl(null, {
         validators: [Validators.required],
-        asyncValidators: [mimeType]
-      })
+        asyncValidators: [mimeType],
+      }),
     });
 
-
-
-  this.userForm.controls['firstname'].setValue(this.dataModule[0].firstname);
-  this.userForm.controls['lastname'].setValue(this.dataModule[0].lastname);
-  this.userForm.controls['email'].setValue(this.dataModule[0].email);
-  this.userForm.controls['mobile'].setValue(this.dataModule[0].mobile);
-  this.userForm.controls['age'].setValue(this.dataModule[0].age);
-  this.userForm.controls['country'].setValue(this.dataModule[0].country);
-  this.userForm.controls['state'].setValue(this.dataModule[0].state);
-  this.userForm.controls['homeAddress1'].setValue(this.dataModule[0].homeAddress1);
-  this.userForm.controls['homeAddress2'].setValue(this.dataModule[0].homeAddress2);
-  this.userForm.controls['companyAddress1'].setValue(this.dataModule[0].companyAddress1);
-  this.userForm.controls['companyAddress2'].setValue(this.dataModule[0].companyAddress2);
-  this.userForm.controls['image'].setValue(this.dataModule[0].image)
-  this.userForm.controls['hobbies'].setValue(this.dataModule[0].hobbies)
-
-
+    this.userForm.controls["firstname"].setValue(this.dataModule[0].firstname);
+    this.userForm.controls["lastname"].setValue(this.dataModule[0].lastname);
+    this.userForm.controls["email"].setValue(this.dataModule[0].email);
+    this.userForm.controls["mobile"].setValue(this.dataModule[0].mobile);
+    this.userForm.controls["age"].setValue(this.dataModule[0].age);
+    this.userForm.controls["country"].setValue(this.dataModule[0].country);
+    this.userForm.controls["state"].setValue(this.dataModule[0].state);
+    this.userForm.controls["homeAddress1"].setValue(
+      this.dataModule[0].homeAddress1
+    );
+    this.userForm.controls["homeAddress2"].setValue(
+      this.dataModule[0].homeAddress2
+    );
+    this.userForm.controls["companyAddress1"].setValue(
+      this.dataModule[0].companyAddress1
+    );
+    this.userForm.controls["companyAddress2"].setValue(
+      this.dataModule[0].companyAddress2
+    );
+    this.userForm.controls["image"].setValue(this.dataModule[0].image);
+    this.userForm.controls["hobbies"].setValue(this.dataModule[0].hobbies);
   }
   userData: any = [];
 
   getUser(id) {
     return this.http.get(this.mockUrl + id).subscribe((data: any) => {
       this.userData.push(data);
-      console.log("dhiraj",this.dataModule[0].country);
-      this.base64Image =this.userData[0].image;
-      console.log("this.base64Image",this.base64Image);
-
+      this.base64Image = this.userData[0].image;
     });
   }
   get hobbies() {
@@ -249,49 +222,31 @@ export class UserEditForm {
     { value: "Rajasthan", label: "Rajasthan" },
   ];
 
-  transform(){
-
+  transform() {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image2);
-}
+  }
 
+  onImagePicked(event) {
+    this.selectedFile = event.target.files[0];
 
+    const file = (event.target as HTMLInputElement).files[0];
+    this.userForm.patchValue({ image: file });
+    this.userForm.get("image").updateValueAndValidity;
+    // this.userForm.controls['image'].setValue(this.imagePreview);
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result as string;
+      this.userForm.controls["image"].setValue(this.imagePreview);
 
-onImagePicked(event) {
-
-  console.log("event",event);
-  this.selectedFile = event.target.files[0];
-  console.log("this.selectedFile", this.selectedFile);
-
-
-  const file = (event.target as HTMLInputElement).files[0];
-  this.userForm.patchValue({ image: file });
-  this.userForm.get("image").updateValueAndValidity;
-  // this.userForm.controls['image'].setValue(this.imagePreview);
-  const reader = new FileReader();
-  reader.onload = () => {
-    console.log("reader.result", reader.result);
-    this.imagePreview = reader.result as string;
-    console.log("imagrpreview", this.imagePreview);
-    this.userForm.controls['image'].setValue(this.imagePreview);
-
-    this.base64Image2 = this.imagePreview;
-
-
-  };
-  reader.readAsDataURL(file);
-
-
-
-
-
-}
+      this.base64Image2 = this.imagePreview;
+    };
+    reader.readAsDataURL(file);
+  }
 
   mockUrl: string = "http://localhost:3000/user/";
-  onUpdateUser(userForm: user[],id) {
+  onUpdateUser(userForm: user[], id) {
     this.http.put(this.mockUrl + id, userForm).subscribe(
       (result: any) => {
-        console.log("POST Request is successful ", result);
-
         this.router.navigateByUrl("/UserProfile/" + result.id);
       },
       (error) => {
@@ -299,5 +254,4 @@ onImagePicked(event) {
       }
     );
   }
-
 }

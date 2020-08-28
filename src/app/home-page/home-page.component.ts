@@ -161,7 +161,6 @@ export class UserDataSave {
   getUser(id) {
     return this.http.get(this.mockUrl + id).subscribe((data: any) => {
       this.userData.push(data);
-      console.log("dhiraj", this.dataModule[0].country);
     });
   }
   get hobbies() {
@@ -236,9 +235,7 @@ export class UserDataSave {
     );
   }
   onImagePicked(event) {
-    console.log("event", event);
     this.selectedFile = event.target.files[0];
-    console.log("this.selectedFile", this.selectedFile);
 
     const file = (event.target as HTMLInputElement).files[0];
     this.userForm.patchValue({ image: file });
@@ -246,9 +243,7 @@ export class UserDataSave {
 
     const reader = new FileReader();
     reader.onload = () => {
-      console.log("reader.result", reader.result);
       this.imagePreview = reader.result as string;
-      console.log("imagrpreview", this.imagePreview);
       this.userForm.controls["image"].setValue(this.imagePreview);
     };
     reader.readAsDataURL(file);
