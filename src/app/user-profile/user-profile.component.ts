@@ -205,9 +205,7 @@ export class UserEditForm {
     { value: "India", label: "India" },
     { value: "Uganda", label: "Uganda" },
     { value: "Ukraine", label: "Ukraine" },
-    { value: "Uganda", label: "Uganda" },
     { value: "United Arab Emirates", label: "United Arab Emirates" },
-    { value: "Uganda", label: "Uganda" },
     { value: "Uruguay", label: "Uruguay" },
     { value: "Uzbekistan", label: "Uzbekistan" },
   ];
